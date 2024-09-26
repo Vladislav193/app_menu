@@ -1,10 +1,25 @@
+{% load draw_menu %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% block title %}Мой сайт{% endblock %}</title>
 </head>
 <body>
+    <header>
+        <h1>Навигация по сайту</h1>
+        <!-- Рендерим меню с названием 'main_menu' через тэг draw_menu -->
+        {% draw_menu 'main_menu' %}
+    </header>
 
+    <main>
+        <!-- Блок контента, который можно расширять в дочерних шаблонах -->
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 2024. Все права защищены.</p>
+    </footer>
 </body>
 </html>
